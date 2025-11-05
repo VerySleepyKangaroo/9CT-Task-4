@@ -106,4 +106,10 @@ Lorem ipsum
 
     END GAME
 
+### **Flowchart:** 
+
 ![alt text](image.png)
+
+### **Time and Action Plan: Gantt Chart** 
+
+![alt text](image-1.png)
