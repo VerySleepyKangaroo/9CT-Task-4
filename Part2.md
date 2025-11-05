@@ -10,13 +10,16 @@ This Unity game project aims to be a 2D shooter game where player aim, shoot and
 - **Platform:** PC (Windows, Mac and Linux)
 
 ### **More Information on the Game**
-- **Genre:** 
+- **Genre:** 2d shooter
+- **Game View:** Side view
+- **Main Objective:** Survive different levels which has by moving and shooting enemies before they attack the player.
+- **Game Mode:** Single-player offline
 
 ***
 ## _**Identifying and Defining:**_
 ### **Identifying a Need**:
 
-Lorem ipsum
+Most games available today are 3d and often include complex controls, heavy graphics and violent themes. However, there are not many simple, fun and skill based 2d shooting games that are fun for teenagers. There is a need for a light @D action game that focuses more on reflexes and time rathen than realism. My project attempts to meet that by making a fast-paced 2d game in Unity.
 
 ### **Requirements Outline:**
 
