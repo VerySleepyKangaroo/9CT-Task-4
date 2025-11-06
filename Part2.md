@@ -19,7 +19,7 @@ This Unity game project aims to be a 2D shooter game where player aim, shoot and
 ## _**Identifying and Defining:**_
 ### **Identifying a Need**:
 
-Most games available today are 3d and often include complex controls, heavy graphics and violent themes. However, there are not many simple, fun and skill based 2d shooting games that are fun for teenagers. There is a need for a light @D action game that focuses more on reflexes and time rathen than realism. My project attempts to meet that by making a fast-paced 2d game in Unity.
+Most games available today are 3d and often include complex controls, heavy graphics and violent themes. However, there are not many simple, fun and skill based 2d shooting games that are fun for teenagers. There is a need for a light 2D action game that focuses more on reflexes and time rathen than realism. My project attempts to meet that by making a fast-paced 2d game in Unity.
 
 ### **Requirements Outline:**
 
@@ -83,35 +83,68 @@ Most games available today are 3d and often include complex controls, heavy grap
 **For Each Level:**
 
     START GAME
-        LOAD main menu
-        IF player presses START
-            START player health = 100
-            START score = 0
-            WHILE player health > 0
-                GET input from keyboard and mouse
-                MOVE player based on input
-                IF player clicks shoot
-                    SPAWN bullet at player position
-                    PLAY shooting sound
-                FOR each enemy
-                    MOVE enemy toward player
-                    IF bullet hits enemy
-                        DESTROY enemy
-                        ADD 10 points to score
-                IF enemy collides with player
-                    REDUCE player health
-            IF player health = 0 or score = 500
-                END
-                IF player health = 0
-                    DISPLAY "Game Over" screen with score
-                IF score = 500
-                    NEXT LEVEL
+        LOAD Main Menu
+
+        IF player selects "Start"
+            SET currentLevel = 1
+
+            WHILE currentLevel SMALLER THAN or EQUAL to 4
+                LOAD Level(currentLevel)
+                SET coinCollected = FALSE
+                SET playerAlive = TRUE
+
+                WHILE playerAlive = TRUE AND coinCollected = FALSE
+                    GET keyboard input (A/D or arrow keys) for movement
+                    GET Spacebar input for jumping
+
+                    MOVE player based on input
+                    APPLY gravity and collisions
+
+                    IF player touches Lava
+                        DISPLAY "2030"
+                        ASK "Restart or Quit?"
+                        IF player chooses "Restart"
+                            RESTART game from Level 1
+                        ELSE
+                            CLOSE window
+                        END IF
+
+                    IF player touches Coin
+                        SET coinCollected = TRUE
+                        DISPLAY "Level Complete!"
+                        INCREASE currentLevel by 1
+
+                END WHILE
+            END WHILE
+
+            DISPLAY "2030"
+            ASK "Restart or Quit?"
+            IF player chooses "Restart"
+                RESTART game from Level 1
+            ELSE
+                QUIT to Main Menu
+            END IF
+
+        ELSE IF player selects "Exit"
+            CLOSE game
 
     END GAME
 
 ### **Flowchart:** 
 
 ![alt text](image.png)
+
+### **StoryBoards:**
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+![alt text](image-5.png)
+
+![alt text](image-6.png)
+
+![alt text](image-7.png)
 
 ### **Time and Action Plan: Gantt Chart** 
 
