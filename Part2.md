@@ -2,7 +2,10 @@
 #### _**Created by Pranav Balamurugan - 9CT1B**_
 
 ### **Objective:**
-This Unity game project aims to be a 2D shooter game where player aim, shoot and dodge enemies. The goal is to use fast reflexes and also use precise movement to successfully complete the game.
+This Unity game project aims to be a 2D shooter game where player aim, shoot and dodge lava. The goal is to use fast reflexes and also use precise movement to successfully complete the game.
+
+### **Narrative:**
+As the Player heads home, he finds rare coins along the way and starts collecting them. His journey takes him through tall mountains and old, broken cities. After a long adventure, he finally reaches home, carrying the coins and memories of his travels.
 
 ### **Target Audience**
 - **Age Group:** Teenagers (13+)
@@ -12,7 +15,7 @@ This Unity game project aims to be a 2D shooter game where player aim, shoot and
 ### **More Information on the Game**
 - **Genre:** 2d shooter
 - **Game View:** Side view
-- **Main Objective:** Survive different levels which has by moving and shooting enemies before they attack the player.
+- **Main Objective:** Survive different levels which by moving and avoiding lava to reach the coin.
 - **Game Mode:** Single-player offline
 
 ***
@@ -31,33 +34,28 @@ Most games available today are 3d and often include complex controls, heavy grap
 || - Mouse or touchscreen input for aiming and shooting |
 || - UI buttons for menu navigation |
 | **Processing** | - Player movement and collision detection |
-|| - Bullet instantiation and trajectory calculation |
-|| - Enemy AI behavior like pathfinding and spawning |
-|| - Score tracking and health managing |
-| **Outputs** | - Visual feedback (explosions, score updates, health bar) |
-|| - Sound effects (shooting, damage, power-ups) |
-|| - Game Over screen and score summary |
+|| - Level tracking and if Player touches lava|
+| **Outputs** | - Visual feedback (using Unity's Particle System) |
+|| - Game Over screen with buttons for restarting and quitting |
 | **Transmission**| - I dont need it for single-player mode but it will be needed for a multiplayer version
-| **Storage** | - High Scores
-|| - Player preferences like the volume of the sounds or sensitivity of the mouse
-|| - Game Progress
+| **Storage** | - No data needs to be stored
 
 ### **Functional and Non-functional Requirements:**
 ***
 | Functional Requirements | Non-Functional Requirements |
 |-|-|
 | - Player can move and Shoot | - Game Runs smoothly at 60 fps or above
-| - Enemies Spawn and move towards the Player | - Responsive controls with less input lag
-| - Collision detection between the bullets and the enemies | - Clear UI
-| - Score increases when enemies are defeated | - Engaging sound with good visual effects
-| - Player loses when Player health reaches zero | - Compatible with PC
+| - Collision detection between the bullets and the enemies| - Responsive controls with less input lag
+| - Proceeds to next level if touching coin  | - Clear UI
+| - Player loses when Player touches lava or falls off the map| - Engaging sound with good visual effects
+| - If player clicks restart, start at level 1| - Compatible with PC
 
 ### **Social and Ethical Issues:**
 ***
 | Issue | Consideration |
 |-|-|
 |Violence| This game involves shooting, so it will use child-friendly graphics to avoid realistic violence |
-|Accessibility| Controls will be simple and customiseable |
+|Accessibility| Controls will be simple like using WASD, Arrow keys and mouse.  |
 |Data Privacy| No personal Data will be collected or transmitted |
 
 ***
@@ -111,7 +109,6 @@ Most games available today are 3d and often include complex controls, heavy grap
 
                     IF player touches Coin
                         SET coinCollected = TRUE
-                        DISPLAY "Level Complete!"
                         INCREASE currentLevel by 1
 
                 END WHILE
